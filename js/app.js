@@ -1,8 +1,15 @@
 const navList = document.getElementById("navbar__list");
-const items = ["Section 1", "Section 2", "Section 3", "Section 4"];
+var items = [];
 const topMenu = document.getElementById("navbar__list");
 let lastId;
 
+const main = document.getElementById("main");
+for (let i = 0; i < main.children.length; i++) {
+    
+    if (main.children[i].nodeName == "SECTION") {
+        items[i] = main.children[i].children[0].children[0].textContent;
+    }
+}
 //Build the nav
 items.forEach((item, i) => {
   const el = document.createElement("a");
@@ -67,4 +74,3 @@ window.addEventListener("scroll", function() {
     });
   }
 });
-
