@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+p{
+    font-size:18px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #001353;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffc800;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+
+
+.sidenav a:hover {
+  color: #ffffff;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: green;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+    <div class="sidenav">
+        <a href="index.html">About</a>
+        <button class="dropdown-btn">
+            Gaming
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="gaming-uni.html">University</a>
+            <a href="gaming-lam.html">Laboratorio di maturità</a>
+        </div>
+
+    </div>
+
+    <div class="main">
+        <h2>Gaming</h2>
+        <p>During the years, I had the chance to develop or supervise the development of several little videogames. I reported here the ones that are for me most representative.</p>
+
+        <h3>Mad Snowman</h3>
+        <p>
+            Description: When you get lost in a maze, find the right path to exit is not the only thing you have to take care about.
+            The big problem is to escape from a mad snowman who wants to kill you. You can defend yourself by shooting snow balls.
+            But the weather changes and could be very foggy, so don’t waste your time!</br>
+            Technical features: C++, OpenGL compatibility profile, artificial intelligence (basic), physics (basic).
+        </p>
+        <img src="images/madsnowman.jpg" width="320" height="200" />
+        <img src="images/madsnowman2.png" width="320" height="200" />
+        <img src="images/madsnowman3.png" width="320" height="200" />
+
+        <h3>An unical experience - Un'esperienza Unical</h3>
+        <p>
+            Description: An Unical Experience is an Indie videogame developed in team by me and other two collegues.
+            This was a project for “Graphical Interfaces and Event Programming” exam at University of Calabria.
+            The location is right our university, in particular the Bucci’s Bridge.
+            The game was only for didactic purposes. Some of the assets have been taken from open source repository with GNU license,
+            some others have been created or animated with Blender.</br>
+            Technical features: 3D graphics, artificial intelligence, network, java JMonkey engine.
+        </p>
+        <iframe width="320" height="200" src="https://www.youtube-nocookie.com/embed/LDTgFGYYdJs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+        <h3>Waldo - The Asset Quest</h3>
+        <p>
+            Story: Waldo, The Asset Quest is a Third Person Shooter. The player is the sentient robot Waldo who travels around dimensions without any conceptual meaning.
+            The game represents a great challenge, since there are no health collectables or tutorial. All of this makes the player in a confused state which evolves in the consciousness of his means and game mechanics.
+            In addition, there are many dangers hanging over the player (traps, enemies, bullets, etc.).<br />
+            Technical features: Unity, C#. <br />
+            <a href="https://www.dropbox.com/s/qqh5z7wo42w2tw8/Waldo.rar?dl=0">Download and Play</a>
+        </p>
+        <iframe width="320" height="200" src="https://www.youtube-nocookie.com/embed/jAKD8JPk0Io" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+    </div>
+
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>
+
+</body>
+</html>

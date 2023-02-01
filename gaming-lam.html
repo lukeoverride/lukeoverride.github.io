@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+p{
+    font-size:18px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #001353;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffc800;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+
+
+.sidenav a:hover {
+  color: #ffffff;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: green;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+    <div class="sidenav">
+        <a href="index.html">About</a>
+        <button class="dropdown-btn">
+            Gaming
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="gaming-uni.html">University</a>
+            <a href="gaming-lam.html">Laboratorio di maturità</a>
+        </div>
+
+    </div>
+
+    <div class="main">
+        <h2>Laboratorio di maturità</h2>
+        <p>
+            Università della Svizzera italiana has an agreement with the high school Liceo Lugano 2
+            for supervising projects of computer science. I have been part of the project for three years.
+        </p>
+
+        <h3>Naiade, 2020</h3>
+        <p>
+            This videogame is a gamification of the life of Claudia, an italian photographer who suffers from Small fiber peripheral neuropathy.
+            In the first level Claudia is at the hospital, and has to escape from nurses.
+            In the second level she is back at home, and needs to take medicines to be fine.
+            The third level is her photo studio where she will process the film.
+            In the last level, she goes for a trip in the outer space to not suffer from gravity forces.
+            At the end of each level, she meets a Naiad, a water nymph who helps her get through it. The dialogues are in italian.
+            Mattia, Nicholas and Greta, three high school students, developed this game with my help.
+            If you want to know more about Claudia's story, please visit <a href="http://claudiamatruda.com">her website</a>.<br />
+            Click the image to start playing!
+        </p>
+        <a href="naiade/index.html"><img src="images/claudia_livello1.png" width="320" /></a>
+
+        <h3>Plastic Hunt, 2021</h3>
+        <p>
+
+        </p>
+        <a href="plastichunt/index.html"><img src="images/plastichunt.png" width="320" /></a>
+
+    </div>
+
+    <script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+    </script>
+
+</body>
+</html>

@@ -2,39 +2,72 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body {
   font-family: "Lato", sans-serif;
 }
 
+p{
+    font-size:18px;
+}
+
 .sidenav {
   height: 100%;
-  width: 160px;
+  width: 200px;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: #001353;
   overflow-x: hidden;
   padding-top: 20px;
 }
 
-.sidenav a {
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: #ffc800;
   display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
 }
 
+
+
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: #ffffff;
 }
 
 .main {
-  margin-left: 160px; /* Same as the width of the sidenav */
+  margin-left: 200px; /* Same as the width of the sidenav */
   font-size: 28px; /* Increased text to enable scrolling */
   padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: green;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
 }
 
 @media screen and (max-height: 450px) {
@@ -45,22 +78,81 @@ body {
 </head>
 <body>
 
-<div class="sidenav">
-  <a href="book.html">Erasmus Game Novel</a>
-  <a href="#services">Services</a>
-  <a href="#clients">Clients</a>
-  <a href="#contact">Contact</a>
-</div>
+    <div class="sidenav">
+        <a href="index.html">About</a>
+        <button class="dropdown-btn">
+            Gaming
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="gaming-uni.html">University</a>
+            <a href="gaming-lam.html">Laboratorio di maturità</a>
+        </div>
 
-<div class="main">
-  <h2>Sidebar</h2>
-  <p>This sidebar is of full height (100%) and always shown.</p>
-  <p>Scroll down the page to see the result.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-</div>
+    </div>
+
+    <div class="main">
+        <h2>About</h2>
+        <p>I am Luca, a PhD student in Computer Graphics at Università della Svizzera italiana, Switzerland. </p>
+        <p>
+            In this website, intentionally web 1.0 and still in progress, I publish some info about my research as well as extra stuff that I do or I like, e.g. gaming prototypes, music, teaching, sport... <br />
+            <a href="https://cassiophong.wordpress.com">My previous blog</a> will be soon dismissed and the threads will be transfered to this website.
+        </p>
+        <h3>Research</h3>
+        <p>
+            I work in the Perception, Display and Fabrication group led by Prof. Piotr Didyk.
+            My current studies focus on investigating the perception of Human Visual System (HVS) in the peripheral vision,
+            to optimize the graphics content for wide-field-of-view displays.
+            Particularly, I work on gaze-contingency algorithms and foveated rendering.
+            My research deals with computer graphics driven by perception. I am working on the ERC Starting Grant supported PERDY project.
+            Before coming in Switzerland, I worked in robotics and obtained a MSc from University of Calabria (Italy) with a thesis focusing on emotion recognition (collab with University of Plymouth, UK).
+        </p>
+
+        <h3><a name="publications">Publications</a></h3>
+        <p>
+            <b>Learning Foveated Reconstruction to Preserve Perceived Image Statistics</b></br>
+            Luca Surace, Marek Wernikowski, Cara Tursun, Karol Myszkowski, Radosław Mantiuk, Piotr Didyk</br>
+            <b>Transaction on Applied Perception, 2023 - </b>
+            <a href="https://arxiv.org/abs/2108.03499">link</a></br>
+        </p>
+        <p>
+            <b>Emotion Recognition in the wild using deep neural networks and Bayesian classifiers</b></br>
+            Luca Surace, Massimiliano Patacchiola, Elena Battini Sonmez, William Spataro, Angelo Cangelosi</br>
+            <b>Proceedings of the 19th ACM International Conference on Multimodal Interaction (ICMI), 2017 - </b>
+            <a href="https://arxiv.org/abs/1709.03820">link</a>
+        </p>
+        <p>
+            <b>S-rep model for fundus image analysis</b></br>
+            Francesco Calimeri, Claudio Stamile, Luca Surace</br>
+            <b>IEEE International Symposium on Signal Processing and Information Technology (ISSPIT), 2017 - </b>
+            <a href="https://ieeexplore.ieee.org/abstract/document/8388623">link</a>
+        </p>
+
+
+        <h3>Teaching</h3>
+        <p>FS 2019/2020 - FS 2022/2023: Computer Graphics</p>
+        <p>SS 2019/2020, SS 2021/2022: Computational Fabrication</p>
+        <p>SS 2020/2021: Algorithms & Data Structures</p>
+
+    </div>
+
+    <script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+    </script>
 
 </body>
 </html>
