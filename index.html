@@ -1,178 +1,158 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body {
-  font-family: "Lato", sans-serif;
-}
+	<head>
+		<title>Luca Src</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
 
-p{
-    font-size:18px;
-}
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<span class="image avatar"><img src="images/avatar.png" alt="" /></span>
+					<h1 id="logo"><a href="#">Luca Surace</a></h1>
+					<p>PhD student in Computer Graphics & Perception</p>
+				</header>
+				<nav id="nav">
+					<ul>
+						<li><a href="#one" class="active">About</a></li>
+						<li><a href="#two">Research</a></li>
+						<li><a href="#three">Publications</a></li>
+						<li><a href="#four">Teaching</a></li>
+					</ul>
+				</nav>
+				<footer>
+					<ul class="icons">
+						<li><a href="https://github.com/lukeoverride" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="mailto:luca.surace@usi.ch" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+				</footer>
+			</section>
 
-.sidenav {
-  height: 100%;
-  width: 200px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #001353;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-/* Style the sidenav links and the dropdown button */
-.sidenav a, .dropdown-btn {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #ffc800;
-  display: block;
-  border: none;
-  background: none;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-  outline: none;
-}
+				<!-- Main -->
+                <div id="main">
 
+                    <!-- One -->
+                    <section id="one">
+                        <!--
+                        <div class="image main" data-position="center">
+                            <img src="images/frattale.jpg" alt="" />
+                        </div> -->
+                        <div class="container">
+                            <header class="major">
+                                <h2>About</h2>
+                                <p>I am Luca, a PhD student in Computer Graphics at Università della Svizzera italiana, Switzerland. </p>
+                                <p>
+                                    In this website, still in progress, I publish some info about my research as well as extra stuff that I do or I like, e.g. gaming prototypes, music, teaching, sport... <br />
+                                    <a href="https://cassiophong.wordpress.com">My previous blog</a> will be soon dismissed and the threads will be transfered to this website.
+                                </p>
+                            </header>
+                            <p>This website is intended as a half way between a personal page and a blog. Other than content on computer science, 
+                            it is going to contain flashes of various topics such as reflections on every day habits, analysis of song lyrics or the bond between science and art.
+                            </p>
+                        </div>
+                    </section>
 
+                    <!-- Two -->
+                    <section id="two">
+                        <div class="container">
+                            <h3>Research</h3>
+                            <p>
+                                I work in the Perception, Display and Fabrication group led by Prof. Piotr Didyk. My PhD is supported by ERC Starting Grant, PERDY project.
+                                My current studies focus on investigating the perception of Human Visual System (HVS) in the peripheral vision,
+                                to optimize the graphics content for wide-field-of-view displays.
+                                Particularly, I work on gaze-contingency algorithms and foveated rendering.
 
-.sidenav a:hover {
-  color: #ffffff;
-}
+                                Before coming in Switzerland, I worked in robotics and obtained a MSc from University of Calabria (Italy) with a thesis focusing on emotion recognition (collab with University of Plymouth, UK).
+                            </p>
+                        </div>
+                    </section>
 
-.main {
-  margin-left: 200px; /* Same as the width of the sidenav */
-  font-size: 28px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
-}
-
-/* Add an active class to the active dropdown button */
-.active {
-  background-color: green;
-  color: white;
-}
-
-/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-.dropdown-container {
-  display: none;
-  background-color: #262626;
-  padding-left: 8px;
-}
-
-/* Optional: Style the caret down icon */
-.fa-caret-down {
-  float: right;
-  padding-right: 8px;
-}
-
-
-/* On screens that are less than 700px wide, make the sidebar into a topbar */
-@media screen and (max-width: 700px) {
-  .sidenav {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .sidenav a {float: left;}
-  div.main {margin-left: 0;}
-}
-
-/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-@media screen and (max-width: 400px) {
-  .sidenav a {
-    text-align: center;
-    float: none;
-  }
-}
-
-
-
-
-</style>
-</head>
-<body>
-
-    <div class="sidenav">
-        <a href="index.html">About</a>
-        <button class="dropdown-btn">
-            Gaming
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-container">
-            <a href="gaming-uni.html">University</a>
-            <a href="gaming-lam.html">Laboratorio di maturità</a>
-        </div>
-
-    </div>
-
-    <div class="main">
-        <h2>About</h2>
-        <img src="images/avatar.png" width="128" />
-        <p>I am Luca, a PhD student in Computer Graphics at Università della Svizzera italiana, Switzerland. </p>
-        <p>
-            In this website, intentionally web 1.0 and still in progress, I publish some info about my research as well as extra stuff that I do or I like, e.g. gaming prototypes, music, teaching, sport... <br />
-            <a href="https://cassiophong.wordpress.com">My previous blog</a> will be soon dismissed and the threads will be transfered to this website.
-        </p>
-        <h3>Research</h3>
-        <p>
-            I work in the Perception, Display and Fabrication group led by Prof. Piotr Didyk. My PhD is supported by ERC Starting Grant, PERDY project.
-            My current studies focus on investigating the perception of Human Visual System (HVS) in the peripheral vision,
-            to optimize the graphics content for wide-field-of-view displays.
-            Particularly, I work on gaze-contingency algorithms and foveated rendering.
-
-            Before coming in Switzerland, I worked in robotics and obtained a MSc from University of Calabria (Italy) with a thesis focusing on emotion recognition (collab with University of Plymouth, UK).
-        </p>
-
-        <h3><a name="publications">Publications</a></h3>
-        <p>
-            <b>Learning Foveated Reconstruction to Preserve Perceived Image Statistics</b></br>
-            Luca Surace, Marek Wernikowski, Cara Tursun, Karol Myszkowski, Radosław Mantiuk, Piotr Didyk</br>
-            <b>Transaction on Applied Perception, 2023 - </b>
-            <a href="https://arxiv.org/abs/2108.03499">link</a></br>
-        </p>
-        <p>
-            <b>Emotion Recognition in the wild using deep neural networks and Bayesian classifiers</b></br>
-            Luca Surace, Massimiliano Patacchiola, Elena Battini Sonmez, William Spataro, Angelo Cangelosi</br>
-            <b>Proceedings of the 19th ACM International Conference on Multimodal Interaction (ICMI), 2017 - </b>
-            <a href="https://arxiv.org/abs/1709.03820">link</a>
-        </p>
-        <p>
-            <b>S-rep model for fundus image analysis</b></br>
-            Francesco Calimeri, Claudio Stamile, Luca Surace</br>
-            <b>IEEE International Symposium on Signal Processing and Information Technology (ISSPIT), 2017 - </b>
-            <a href="https://ieeexplore.ieee.org/abstract/document/8388623">link</a>
-        </p>
+                    <!-- Three -->
+                    <section id="three">
+                        <div class="container">
+                            <h3>Publications</h3>
+                            
+                            <div class="features">
+                                <article>
+                                    <a href="https://www.pdf.inf.usi.ch/projects/LearningFoveatedReconstruction/index.html" class="image"><img src="images/sampling_blended_alt.png" alt="" /></a>
+                                    <div class="inner">
+                                        <h4><a href="https://www.pdf.inf.usi.ch/projects/LearningFoveatedReconstruction/index.html">Learning Foveated Reconstruction to Preserve Perceived Image Statistics</a></h4>
+                                        <p>
+                                            Luca Surace, Marek Wernikowski, Cara Tursun, Karol Myszkowski, Radosław Mantiuk, Piotr Didyk</br>
+                                            <b>Transaction on Applied Perception, 2023 </b>
+                                        </p>
+                                    </div>
+                                </article>
+                                <article>
+                                    <a href="https://arxiv.org/abs/1709.03820" class="image"><img src="images/emotion.png" alt="" /></a>
+                                    <div class="inner">
+                                        <h4><a href="https://arxiv.org/abs/1709.03820">Emotion Recognition in the wild using deep neural networks and Bayesian classifiers</a></h4>
+                                        <p>
+                                            Luca Surace, Massimiliano Patacchiola, Elena Battini Sonmez, William Spataro, Angelo Cangelosi</br>
+                                            <b>19th ACM International Conference on Multimodal Interaction (ICMI), 2017</b>
+                                        </p>
+                                    </div>
+                                </article>
+                                <article>
+                                    <a href="https://ieeexplore.ieee.org/abstract/document/8388623" class="image"><img src="images/vessels.png" alt="" /></a>
+                                    <div class="inner">
+                                        <h4><a href="https://ieeexplore.ieee.org/abstract/document/8388623">S-rep model for fundus image analysis</a></h4>
+                                        <p>
+                                            Francesco Calimeri, Claudio Stamile, Luca Surace</br>
+                                            <b>IEEE International Symposium on Signal Processing and Information Technology (ISSPIT), 2017</b>
+                                        </p>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
 
 
-        <h3>Teaching</h3>
-        <p>FS 2019/2020 - FS 2022/2023: Computer Graphics</p>
-        <p>SS 2019/2020, SS 2021/2022: Computational Fabrication</p>
-        <p>SS 2020/2021: Algorithms & Data Structures</p>
+                    <section id="four">
+                        <div class="container">
+                            <h3>Teaching</h3>
+                            <p>
+                                <ul>
+                                    <li>FS 2019/2020 - FS 2022/2023: Computer Graphics</li>
+                                    <li>SS 2019/2020, SS 2021/2022: Computational Fabrication</li>
+                                    <li>SS 2020/2021: Algorithms & Data Structures</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </section>
 
-    </div>
+                </div>
 
-    <script>
-/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
+				<!-- Footer -->
+					<section id="footer">
+						<div class="container">
+							<ul class="copyright">
+								<li>&copy; Luca Surace. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
 
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var dropdownContent = this.nextElementSibling;
-    if (dropdownContent.style.display === "block") {
-      dropdownContent.style.display = "none";
-    } else {
-      dropdownContent.style.display = "block";
-    }
-  });
-}
-    </script>
+			</div>
 
-</body>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
