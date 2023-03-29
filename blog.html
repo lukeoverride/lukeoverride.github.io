@@ -1,0 +1,120 @@
+﻿<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Luca Src</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="gaming.html">Gaming</a></li>
+                        <li><a href="blog.html" class="active">Blog</a></li>
+                    </ul>
+				</nav>
+				<header>
+					<span class="image avatar"><img src="images/avatar.png" alt="" /></span>
+					<h1 id="logo"><a href="#">Luca Surace</a></h1>
+					<p>PhD student in Computer Graphics & Perception</p>
+				</header>
+				<nav id="nav">
+					<ul>
+						<li><a href="#one" class="active">Simulation of natural phenomena</a></li>
+						<li><a href="#two">Never ending sunset</a></li>
+					</ul>
+				</nav>
+				<footer>
+					<ul class="icons">
+						<li><a href="https://github.com/lukeoverride" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="mailto:luca.surace@usi.ch" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+				</footer>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+                <div id="main">
+                    <section id="one">
+                        <div class="container">
+                            <h3>Technology, Science and Art in the simulation of natural phenomena</h3>
+                            <p>How many times have you watched a flower? How many a big wave? And how many years a small seed need to became a robust tree? And have you seen more sunsets or sunrises?  (Maybe you are not a morning person!)</p>
+                            <p>One beautiful aspect of computer science is that software can model and (almost) simulate a lot of natural phenomena. In this post I would like to focus our attention on the development process of plants.</p>
+                            <p>Considering an algorithmic approach [1], plants can be considered as a modular system consisting of basic elements such as leaves, internodes, and so on. Then, a plant geometry is the result of the interaction of the modules.</p>
+                            <p><center><img src="images/plant.png" alt="plant" width="414" height="240" /></center></p>
+                            <p style="text-align: center;">Plant modules [2]</p>
+                            <p>The formalism which perfectly matches this method of modeling structures are <a href="https://en.wikipedia.org/wiki/L-system">Lyndenmayer Grammars</a>. A grammar is a formal language which we use every day to communicate. For instance, the english language can be formalized as follows. A sentence (S) is composed of a noun phrase (NP) and a verb phrase (VP). A noun phrase may be composed of a determiner (D/DET) and a noun (N). A noun phrase may also be composed of an adjective (ADJ) and a noun (N). A verb phrase may be composed of a verb (V) and a noun (N) or noun phrase (NP).</p>
+                            <p><center><img src="images/grammar.jpg" alt="grammar" width="294" height="384" /></center></p>
+                            <p style="text-align: center;"><a href="https://www.cs.umd.edu/~lam/cmsc330/summer2012/lectures/class08-cfgintro.pdf">Grammar for English language</a></p>
+                            <p>An L-system consists of an <a title="Alphabet" href="https://en.wikipedia.org/wiki/Alphabet">alphabet</a> of symbols that can be used to make <a title="String (computer science)" href="https://en.wikipedia.org/wiki/String_(computer_science)">strings</a>, a collection of <a title="Production (computer science)" href="https://en.wikipedia.org/wiki/Production_(computer_science)">production rules</a> that expand each symbol into some larger string of symbols, an initial "<a title="Axiom" href="https://en.wikipedia.org/wiki/Axiom">axiom</a>" string from which to begin construction, and a mechanism for translating the generated strings into geometric structures. It allows to model a development on the level of individual plant components (stem segments elongate, buds initiate new lateral branches, leaves unfold, and so forth). Specifically:</p>
+                            <ul>
+                                <li> Productions are used to capture each developmental event stating how a<br />component or module is replaced by a subsequent form.</li>
+                                <li>String notation is employed to represent modules and productions</li>
+                            </ul>
+                            <p><center><img src="images//lindenmayer.jpg" alt="lindenmayer" width="501" height="215" /></center></p>
+                            <p style="text-align: center;">The production rule: A -&gt; F[+A][-A]FA</p>
+                            <p>At this point, you may be wondering about the visual aspect of simulation. Well, no worries, computer graphics is helping us. Rendering systems and graphics engines could manage to get a visualization really close to reality, such as in <a href="https://disney-animation.s3.amazonaws.com/uploads/production/publication_asset/135/asset/vegetation2016_v9.pdf" target="_blank" rel="noopener">Disney Zootopia</a>. You can also get a look at <a href="https://dl.acm.org/citation.cfm?id=2927332">this</a> work presented at SIGGRAPH 2016.</p>
+                            <p>Other rooms for the simulation are represented by integration of biomechanics, animation, interaction between several plants, <a href="https://dl.acm.org/citation.cfm?id=237279">space constraints</a>, influence of light and wind.</p>
+                            <p> </p>
+                            <p><center><img src="images/zootropia.jpg" alt="zootropia" width="800" /></center></p>
+                            <p style="text-align: center;">A scene of Disney Zootopia</p>
+                            <p>References:</p>
+                            <p>[1] Prusinkiewicz, Przemyslaw, and Aristid Lindenmayer. <i>The algorithmic beauty of plants</i>. Springer Science &amp; Business Media, 2012.<br/>
+                            [2] Pirk, Sören, et al. "Modeling plant life in computer graphics." <i>ACM SIGGRAPH 2016 Courses</i>. ACM, 2016.<br />
+                            [3] Měch, Radomír, and Przemyslaw Prusinkiewicz. "Visual models of plants interacting with their environment." <i>Proceedings of the 23rd annual conference on Computer graphics and interactive techniques</i>. ACM, 1996.<br />
+                            [4] Prusinkiewicz, Przemyslaw. <i>In search of the right abstraction: the synergy between art, science, and information technology in the modeling of natural phenomena</i>. na, 1998.</p>
+                        </div>
+                    </section>
+
+
+                    <section id="two">
+                        <div class="container">
+                            <h3>A never-ending sunset flying towards west</h3>
+                            <p>
+                                Some time ago I took a plane from Milan to Toulouse. It was delayed 2 hours because of air-traffic control strikes in France. So I travelled in the evening.
+                                When we travel by plane, it is easy to imagine that we are travelling in space-time. 
+                                Indeed, if our route is perpendicular with respect to earth axis, that is, we are following the direction of some parallel, we are actually increasing or decreasing the duration of the day.
+                                In my case, I was travelling towards west, at the time of sunset, practically my plane was following the sun. So, I had the lucky to enjoy a very long sunset.
+
+                                <center><img src="images/aereowest.jpg" /></center>
+                            </p>
+                            
+
+                        </div>
+</section>
+
+                </div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="container">
+							<ul class="copyright">
+								<li>&copy; Luca Surace. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
