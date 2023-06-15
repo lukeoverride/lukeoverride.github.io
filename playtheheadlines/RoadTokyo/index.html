@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Road to Tokyo</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/RoadTokyo.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body>
+    <div class="webgl-content">
+    <p>Instructions: <br> - Ajla: click left mouse button or tap to run as fast as possible. <br>
+    				  - Luminosa: click left mouse button or tap to jump obstacles. You can hit them, but probably you will fall down! <br>
+    	If you are playing from smartphone (even if it is recommended to use a computer), it is advised to: 1) rotate your telephone horizontally; 2) enter full screen mode by pressing the arrows at the bottom-right corner of the game screen <b>after the initial loading has completed</b>. <br>
+    	To restart the game, click twice or simply refresh the page. Enjoy!
+    	</p><br>
+      <div id="unityContainer" style="width: 960px; height: 540px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">Road to Tokyo</div>
+      </div>
+    </div>
+  </body>
+</html>

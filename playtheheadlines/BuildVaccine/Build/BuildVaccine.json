@@ -1,0 +1,15 @@
+{
+"companyName": "DefaultCompany",
+"productName": "Throw the vaccine",
+"productVersion": "1.0",
+"dataUrl": "BuildVaccine.data.unityweb",
+"wasmCodeUrl": "BuildVaccine.wasm.code.unityweb",
+"wasmFrameworkUrl": "BuildVaccine.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#292728",
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.3.5f1"
+}

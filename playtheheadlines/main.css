@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+
+@font-face {
+  font-family: 'FontScribbles';
+  src: url("fonts/diploma/diploma.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'PoynterText';
+  src: url("fonts/PoynterTextRegular/PoynterTextRegular.ttf");
+  font-weight: bold;
+}
+
+.date{
+	text-align:left;
+}
+
+.contacts{
+	text-align:right;
+}
+
+.page {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+div.journalhead{
+	text-align:center;
+	font-family: 'FontScribbles', Arial, sans-serif;
+	font-size: 100px;
+
+}
+
+.newspaper {
+  column-count: 3;
+  column-gap: 20px;
+  column-rule: 1px solid lightblue;
+  font-family: "PoynterText", Courier, monospace;
+  font-size: 15px;
+}
+
+.photo > img {
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  padding:10px;
+}
+
+img.bw{
+ -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+img.bw:hover{
+filter: grayscale(0%);
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+.column {
+  float: left;
+  width: 60.00%;
+  padding: 10px;
+
+}
+
+.columnSmall {
+  float: left;
+  width: 15.00%;
+  padding: 10px;
+
+}
+
+.columnMedium {
+  float: left;
+  width: 25.00%;
+  padding: 10px;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+/* nav bar */
+.topnav {
+padding-left:5%;
+padding-right:5%;
+  overflow: hidden;
+  background-color: #dddddd;
+}
+
+.topnav a {
+  padding-left:100%;
+  vertical-align:text-top;
+  color: #000000;
+  
+/*  padding: 14px 16px; */
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #dddddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #0086ad;
+  color: white;
+}
+
+
+
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Naiade</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Build.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body> 
+    <div class="webgl-content"><br>
+  	<p>This videogame is a gamification of the life of Claudia, an italian photographer who suffers from Small fiber peripheral neuropathy. In the first level Claudia is at the
+      hospital, and has to escape from nurses. In the second level she is back at home, and needs to take medicines to be fine. The third level is her photo studio where she will process
+      the film. In the last level, she goes for a trip in the outer space to not suffer from gravity forces. At the end of each level, she meets a Naiad, a water nymph who helps her get
+      through it. The dialogues are in italian.<br>
+      Mattia, Nicholas and Greta, three high school students, developed this game with my help.
+      If you want to know more about Claudia's story, please visit <a href="http://claudiamatruda.com">her website</a>
+      Instructions: use arrow keys or WASD to move; E to collect the items and R to drop them in the third level. Enjoy!
+       </p><br>
+      <div id="unityContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">Naiade</div>
+      </div>
+      
+    </div>
+  </body>
+</html>

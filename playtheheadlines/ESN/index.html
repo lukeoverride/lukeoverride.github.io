@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | When the ship comes in Lugano</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/ESN.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body>
+    <div class="webgl-content">
+        <h3>Instructions:</h3>
+    <p>Your boat full of erasmus students is floating on the southest right branch of the Lake Lugano. You need to safely guide it from Capolago to Lugano. The boat must not touch the shoreline, otherwise it will explode! </br> Use the arrows to play: left ← and right → to rotate the boat; up ↑ to push and down ↓ to back water. </br> 
+	If you play from <b>computer</b> <u>(recommended)</u>, please use the arrow keys on the keyboard. Enter full screen mode for a better game experience.</br>
+	If you play from <b>smartphone</b>, please use the commands on the game screen. It is advised to: 1) rotate your telephone horizontally; 2) enter full screen mode by pressing the blue arrows at the bottom-right corner of the game screen <b>after the initial loading has completed</b>.</p></br>
+      <div id="unityContainer" style="width: 960px; height: 540px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">When the ship comes in Lugano</div>
+      </div>
+    </div>
+  </body>
+</html>
