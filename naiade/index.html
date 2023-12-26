@@ -12,18 +12,17 @@
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Build.json", {onProgress: UnityProgress});
     </script>
   </head>
-  <body> 
-    <div class="webgl-content"><br>
-  	<p>
-      Instructions: use arrow keys or WASD to move; E to collect the items and R to drop them in the third level. Enjoy!
-       </p><br>
-      <div id="unityContainer" style="width: 960px; height: 600px"></div>
-      <div class="footer">
-        <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-        <div class="title">Naiade</div>
+  <body>
+      <div class="webgl-content">
+          <p>
+              Instructions: use arrow keys or WASD to move; E to collect the items and R to drop them in the third level. Enjoy!
+          </p><br>
+          <div id="unityContainer" style="width: 960px; height: 600px"></div>
+          <div class="footer">
+              <div class="webgl-logo"></div>
+              <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+              <div class="title">Naiade</div>
+          </div>
       </div>
-      
-    </div>
   </body>
 </html>
