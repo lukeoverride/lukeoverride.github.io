@@ -24,6 +24,14 @@
             text-align: center;
             font-size: 14pt;
         }
+
+        .scroll-container {
+            overflow-x: auto; /* Enables horizontal scrolling */
+            white-space: nowrap; /* Prevents wrapping of content */
+        }
+        .scroll-container img {
+            display: inline-block; /* Ensures the image remains inline */
+        }
     </style>
 </head>
 	<body class="is-preload">
@@ -45,6 +53,7 @@
 				</header>
 				<nav id="nav">
                     <ul>
+                        <li><a href="#bobwords">Bob Dylan's words</a></li>
                     	<li><a href="#spagnolo">Spagnolo e Calabrese</a></li>
                     	<li><a href="#bob">Riflessioni su un concerto di Bob Dylan</a></li>
                         <li><a href="#stopwatch">Costruire un cronometro elettrico </br> per atletica con Arduino</a></li>
@@ -67,6 +76,35 @@
 
 				<!-- Main -->
                 <div id="main">
+					<section id="bobwords">
+						<div class="container">
+							<h3>The 100 most used words in Bob Dylan's songs</h3>
+							<h5>25 December 2024</h5>
+							<p>
+                                I was browsing the <a href="https://www.bobdylan.com">Bob Dylan website</a> some time ago and noticed that it offers
+                                the <a href="https://www.bobdylan.com/songs/">lyrics for most of his songs</a>.
+                                Interestingly, for each song, the site also provides a list of all the places it has been played throughout Dylan's career.
+                                This means we can find details such as the number of performances, as well as the first and last time a song was played.
+
+                                So I decided to write a piece of code to query all the lyrics and analyze the occurrence of each word.
+                                In this way, I could discover which words Bob Dylan uses the most in his songs.
+                                And here it is: the histogram of Bob Dylan's discography!
+
+                                <div class="scroll-container">
+                                        <img src="images/bob100.svg" height=480 alt="Large Image">
+                                </div>
+                                </br>
+                            
+                                Note: There might be a few miscounted words since I didn't spend too much time properly testing and fine-tuning the parser
+                                for all cases, but it should be fairly accurate overall. Not all the words are considered, but only the nouns contained in the
+                                dictionary <a href=https://www.nltk.org/>NLTK</a>.
+                            
+                            
+							</p>
+						</div>
+					</section>
+
+
 					<section id="spagnolo">
 						<div class="container">
 							<h3>Similitudini tra spagnolo e calabrese</h3>
