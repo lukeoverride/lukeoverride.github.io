@@ -72,6 +72,29 @@ input, select, textarea {
 	appearance: none;
 }
 
+.git_link {
+    background-image: url(../icons/GIT.png);
+    background-repeat: no-repeat;
+    background-size: 24px 26px;
+    text-indent: 28px;
+    line-height: 26px;
+    height: 26px;
+    display: inline-block;
+	margin-top: 15px;
+}
+
+
+.page_link {
+    background-image: url(../icons/ProjectPage.png);
+    background-repeat: no-repeat;
+    background-size: 24px 26px;
+    text-indent: 28px;
+    line-height: 26px;
+    height: 26px;
+    display: inline-block;
+	margin-top: 15px;
+}
+
 /* Basic */
 
 	html {
