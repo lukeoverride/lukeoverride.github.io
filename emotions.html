@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script src="https://www.webglearth.com/v2/api.js"></script>
+    <script>
+      function initialize() {
+        var earth = new WE.map('earth_div');
+        WE.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(earth);
+        
+
+        /*var marker = WE.marker([51.5, -0.09]).addTo(earth);
+        marker.bindPopup("<b>Hello world!</b><br>I am a popup.<br /><span style='font-size:10px;color:#999'>Tip: Another popup is hidden in Cairo..</span>", {maxWidth: 150, closeButton: true}).openPopup();
+
+        var marker2 = WE.marker([30.058056, 31.228889]).addTo(earth);
+        marker2.bindPopup("<b>Cairo</b><br>Yay, you found me!", {maxWidth: 120, closeButton: false});*/
+
+        WE.marker([41.89,12.49], './assets/icons/emotions/surprise.png', 92, 64).addTo(earth).bindPopup("<b>Rome, Italy</b><br>The Colosseum can only surprise you! ", {maxWidth: 120, closeButton: true});
+        WE.marker([48.85,2.32], './assets/icons/emotions/anger.png', 64, 65).addTo(earth);
+        WE.marker([43.73,7.42], './assets/icons/emotions/contempt.png', 72, 64).addTo(earth);
+        WE.marker([27.79,73.34], './assets/icons/emotions/disgust.png', 95, 64).addTo(earth);
+        WE.marker([45.51,25.37], './assets/icons/emotions/fear.png', 90, 64).addTo(earth).bindPopup("<b>Bran, Romania</b><br>The Dracula Castle has a dark and unpleasant atmosphere. Do not visit it alone.", 
+        {maxWidth: 120, closeButton: true});
+        WE.marker([23.11,-82.36], './assets/icons/emotions/joy.png', 88, 64).addTo(earth)
+        .bindPopup("<b>Havana, Cuba</b><br>The joy of Cuba is visible in its street life, music and dance, colorful architecture and classic cars", 
+        {maxWidth: 120, closeButton: true});
+        WE.marker([31.50,34.4], './assets/icons/emotions/sadness.png', 64, 77).addTo(earth);
+
+        earth.setView([40.505, 15], 3);
+      }
+    </script>
+    <style>
+      html, body{padding: 0; margin: 0; background-color: black;}
+      #earth_div{top: 0; right: 0; bottom: 0; left: 0; position: absolute !important;}
+    </style>
+    <title>WebGL Earth API: Markers and pop-up on a globe example</title>
+    <meta name="description" content="Add markers with a pop-up to an open-source 3D globe and display it on a web or mobile devices.">
+  </head>
+  <body onload="initialize()">
+    <div id="earth_div"></div>
+  </body>
+</html>
