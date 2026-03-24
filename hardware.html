@@ -1,0 +1,803 @@
+﻿<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Luca's Studio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/slideshow.css" />
+        <style>
+        figure {
+            padding: 4px;
+            margin: auto;
+            text-align: center;
+        }
+
+        figcaption {
+            font-style: italic;
+            padding: 2px;
+            text-align: center;
+            font-size: 14pt;
+        }
+
+        .scroll-container {
+            overflow-x: auto; /* Enables horizontal scrolling */
+            white-space: nowrap; /* Prevents wrapping of content */
+        }
+        .scroll-container img {
+            display: inline-block; /* Ensures the image remains inline */
+        }
+
+
+
+
+        summary {
+            cursor: pointer;
+            list-style: none; /* Rimuove la freccetta predefinita se preferisci */
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+
+        summary:hover {
+            background-color: rgba(0, 209, 178, 0.3);
+        }
+
+        .content {
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+
+
+        </style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="gaming.html">Gaming</a></li>
+                        <li><a href="hardware.html" class="active">Hardware</a></li>
+                    </ul>
+				</nav>
+				<header>
+					<span class="image avatar"><img src="images/stromboli.jpg" alt="" /></span>
+					<h1 id="logo"><a href="#">Luca Surace</a></h1>
+					<p>PhD in Computer Graphics & Human Perception</p>
+				</header>
+				<nav id="nav">
+                    <ul>
+                        <li><a href="#stopwatch" class="active">Cronometro per atletica</a></li>
+                        <li><a href="#stopwatch2.0" >Athletics timing system (v2.0)</a></li>
+                        <li><a href="#power" >Display power consumption measurement</a></li>
+                    </ul>
+				</nav>
+				<footer>
+                    <ul class="icons">
+                        <li><a href="https://scholar.google.it/citations?user=UZeU9wIAAAAJ&hl=it" class="icon brands fa fa-google"><span class="label">Scholar</span></a></li>
+                        <li><a href="https://github.com/lukeoverride" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                        <li><a href="mailto:luca.surace@usi.ch" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+                        <li><a href="https://www.linkedin.com/in/lukeoverride" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+                        <li><a href="https://orcid.org/0000-0002-8856-7698" class="icon brands fa-orcid"><span class="label">Orcid</span></a></li>
+                    </ul>
+				</footer>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+                <div id="main">
+
+
+                    <section id="stopwatch">
+                        <div class="container">
+                            <details>
+                            <summary><h3>Costruire un cronometro elettrico per atletica con Arduino
+                            <svg xmlns="http://www.w3.org" width="24" height="16" viewBox="0 0 3 2" 
+                            style="vertical-align: middle; margin-left: 8px; border-radius: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.2);">
+                                <rect width="1" height="2" fill="#009246"/>
+                                <rect width="1" height="2" x="1" fill="#fff"/>
+                                <rect width="1" height="2" x="2" fill="#ce2b37"/>
+                            </svg>
+                            
+                            </h3>
+                            <h4>Una soluzione facile, portatile ed economica</h4>
+                            <h5>8 December 2020</h5>
+                            </summary>
+                            <p>
+                                A qualsiasi velocista, nella propria vita sportiva, sarà capitato almeno una volta di dover scontrarsi con qualche giudice per via dei tempi presi "alla buona",
+                                o per via di qualche palese errore di scambio corsie. Nonostante i tempi manuali non valgano più una cicca (cit.),
+                                in alcune regioni italiane si continuano ad utilizzare anche a livello agonistico. Questo avviene perchè spesso, e ahimè,
+                                la federazione o la società organizzatrice della gara non riesce a coprire i costi del noleggio/acquisto del sistema di cronometraggio.
+                            </p>
+                            <p>Le attrezzature omologate, infatti, sono relativamente costose e non sono accessibili alla squadretta di provincia o all'allenatore del paesello. Tuttavia, l'atletica leggera si svolge spesso in piccole cittadine e si sa, non è uno sport in cui le società muovono tanto capitale, anzi. </p>
+                            <p>Oltre alle competizioni, molto spesso sarebbe utile per noi velocisti avere a disposizione un sistema di cronometraggio preciso che dia un valore quasi esatto di quello che sarebbe effettivamente il tempo di gara. Ciò soprattutto durante le settimane di test e pre-competizione. L'unico sistema ad un prezzo <em>non troppo alto</em> da me trovato è il <a href="https://www.youtube.com/watch?v=FDQPTmxmYc8&amp;feature=emb_title">Freelap</a>, prodotto in Svizzera e sicuramente non la cinesata da 10 euro che qualsiasi povero atleta potrebbe permettersi. Il costo si aggira attorno ai 500 euro per una versione di base comprendente moduli partenza e arrivo, ed un orologio che fa da ricevitore e display del tempo finale.</p>
+                            <p>A quel punto, ho notato che data la semplicità del sistema, avrei potuto provare a costruire un cronometro elettrico più economico ma ugualmente preciso. Non mi piace tantissimo smanettare, ma per stavolta ho fatto un'eccezione in nome dell'atletica leggera.</p>
+                            <p>Ed eccoci qui, dalla teoria alla prassi, vediamo <strong>come</strong> costruire un cronometro elettrico portatile per misurare le nostre ripetute (o quelle del vostro cane, cavallo o <em>chicchessia</em>) su una pista di atletica.<br>Questo tutorial è pensato e scritto per chi non ha conoscenze specifiche. anche se qualche nozione tecnologica o di scienza/elettronica/informatica di base potrebbe naturalmente aiutare. </p>
+                            <h4>Panoramica</h4>
+                            <p>Il cronometro elettrico che stiamo per costruire è basato su <a href="https://it.wikipedia.org/wiki/Arduino_(hardware)">Arduino</a>, una scheda elettronica dotata di un microcontrollore facilmente programmabile, ideata in Italia nel 2005. Ci saranno due moduli comunicanti tra di loro: partenza ed arrivo. Ognuno di essi è composto da una scheda Arduino più vari accessori che permettono di simulare un vero e proprio sistema di cronometraggio professionale.</p>
+                            <p>La partenza sarà azionata da un pulsante che farà partire un bip dopo un tempo casuale, in modo da non "barare" sui tempi di reazione. In quell'istante, il modulo radio partenza comunicherà con quello presente all'arrivo, che farà partire il cronometro. Il tempo verrà stoppato al passaggio dell'atleta davanti alla fotocellula. Il modulo arrivo, dotato di wifi, stamperà i risultati su una pagina web accessibile dalla rete locale creata dal vostro smartphone.</p>
+
+                            <ul>
+                                <li>2 Schede Arduino e 2 cavi USB (come quelli delle stampanti): 1 <a href="https://store.arduino.cc/arduino-uno-rev3">Arduino Uno</a>, 1 <a href="https://store.arduino.cc/arduino-uno-wifi-rev2">Arduino Uno Wi-Fi Rev2</a> - circa 55 euro. Gli Arduino sono l'anima del sistema, contengono la CPU che esegue il codice per partire, fermare il tempo e stampare i risultati;</li>
+                                <li>2 power banks per alimentare le schede - circa 30 euro. Io ho utilizzato uno Rav-Power e uno Fresh'N Rebel. Anche da 5000mAh vanno bene, gli Arduino consumano poco;</li>
+                                <li>2 <a href="https://it.wikipedia.org/wiki/Breadboard">breadboard</a> - circa 10 euro. Sono delle basi di plastica dove collegare il tutto. Teoricamente sono fatte per dei circuiti prototipali, ma nel nostro caso vanno bene;</li>
+                                <li>2 moduli radio <a href="https://www.ebay.it/itm/Module-HC-12-SI4463-wireless-433mhz-1129Z/293106994468?hash=item443e89cd24:g:tboAAOSwRERechf4">HC-12</a> - circa 15 euro. Servono a far comunicare il modulo partenza con il modulo arrivo;</li>
+                                <li>2 buzzers - circa 5 euro. Sono delle casse molto piccole che serviranno per indicare il "colpo di pistola";</li>
+                                <li>1 pulsante - circa 1 euro - per avviare la partenza;</li>
+                                <li>cavetti "jumper" maschio/maschio e maschio/femmina, servono per i collegamenti nel circuito;</li>
+                                <li>1 <a href="https://www.amazon.it/gp/product/B07DKGGHCD">fotocellula </a>ad infrarossi - circa 15 euro - per far cosa? Per rilevare il passaggio dell'atleta sul traguardo, <a rel="noreferrer noopener" href="https://www.youtube.com/watch?v=Tta6JJMzLDU&amp;t=59m15s" target="_blank">ovviamente</a>!</li>
+                                <li>1 treppiede - circa 20 euro - anche il più scrauso va bene, deve reggere il modulo arrivo, compreso di fotocellula, ad altezza atleta;</li>
+                                <li>2 cassette di derivazione - circa 15 euro - fungono da contenitore dei due moduli. In linea di principio potreste anche usare dei tupper per alimenti facendogli dei buchi o qualcosa del genere;</li>
+                                <li>elastici - rubateli alla nonna - li ho usati per attaccare le cassette al treppiede;</li>
+                                <li>uno smartphone con funzionalità router wi-fi. Non necessario nel caso di utilizzo display LCD, vedi "possibili estensioni" in basso.</li>
+                            </ul>
+                            <p><strong>Costo totale</strong>: circa 180 euro.</p>
+
+                            <h4>Modulo partenza</h4>
+                            <p>La partenza si compone di un Arduino Uno classico alimentato da un powerbank, al quale vengono collegati, tramite la breadboard, il pulsante, il buzzer e un HC-12. Di seguito vediamo come collegare il tutto:<br></p>
+                            <figure class="wp-block-image aligncenter size-large is-resized"><img src="images/transmitter-partenza_bb-2.jpg?w=1024" alt="" class="wp-image-640" style="width:599px;height:538px" width="599" height="538" /><figcaption class="wp-element-caption">Circuiti del modulo partenza. Le illustrazioni del pulsante, radio e antenna non corrispondono a quelle reali.</figcaption></figure>
+                            <p>Il codice da caricare sull'Arduino è il seguente:</p>
+                            <pre class="wp-block-code"><div id="startCode" style="overflow-y:scroll;height:200px;"><code>
+/*    Arduino Long Range Wireless Communication using HC-12
+                       Example 01
+    by Dejan Nedelkovski, www.HowToMechatronics.com
+ */
+ #include  
+ SoftwareSerial HC12(10, 11); // HC-12 TX Pin, HC-12 RX Pin
+ int pinButton    = 9;
+ int valButtonOld = LOW; // Memorizza lo stato passato del pulsante (evita letture multiple)
+ const int buzzer = 6; //buzzer to arduino pin 6
+ void setup() {
+   Serial.begin(1200);             // Serial port to computer
+   HC12.begin(1200);               // Serial port to HC12
+ pinMode(pinButton, INPUT);
+   pinMode(buzzer, OUTPUT);
+ }
+ void loop() {
+   int valButton = digitalRead(pinButton);
+ if(valButton==HIGH &amp;&amp; valButtonOld==LOW) {
+     //wait some sec ?
+     int temp = random(8000,10000);
+     delay(temp);
+     HC12.write("s");
+     tone(buzzer, 100); // Send 1KHz sound signal…
+     delay(100);        
+     noTone(buzzer);     // Stop sound…
+   } 
+ valButtonOld = valButton;
+
+ while (HC12.available()) {
+     Serial.write(HC12.read());      // Send the data to Serial monitor and clear radio data
+     //buzzer for ping back
+     delay(2000);
+     tone(buzzer,500);
+     delay(300);
+     noTone(buzzer);
+   }
+ }</code></div></pre>
+
+                            <h4>Modulo arrivo</h4>
+                            <img src="images/smartphone-3.jpg" width="360px" height="491px" align="left"><p>
+                                L'arrivo è composto da una scheda Arduino Wifi alimentata da un altro powerbank. A questa scheda collegheremo un buzzer, la fotocellula e l'altro HC-12. Il sensore fotoelettrico da me usato funziona a riflessione e rileva in realtà la distanza tra un oggetto e il sensore stesso. Tuttavia, il programma considera semplicemente l'output del sensore come ON/OFF, cioè se è presente un ostacolo oppure no. <br>
+                                Non dimentichiamo di portare con noi anche il nostro smartphone dotato di funzione router wi-fi. Quello che dobbiamo fare è creare una rete con un dato nome e una data password, e inserire queste due stringhe nel codice caricato sull'Arduino. Così facendo, la scheda si collegherà al telefono e potrà mandare i risultati, visibili aprendo un browser all'indirizzo locale 192.168.43.117 (immagine 14 della Galleria in basso). A volte vengono registrati due o più tempi, il primo è ovviamente quello più preciso.
+                            </p>
+                            <p>Ecco invece i collegamenti:</p>
+                            <figure class="wp-block-image aligncenter size-large is-resized"><img src="images/receiver-arrivo_bb.jpg?w=988" alt="" class="wp-image-643" style="width:591px;height:613px" width="591" height="613" /><figcaption class="wp-element-caption">Circuiti del modulo partenza. Le illustrazioni della fotocellula, radio e antenna non corrispondono a quelle reali.</figcaption></figure>
+                            <p>ed il codice:</p>
+                            <pre class="wp-block-code"><div id="startCode" style="overflow-y:scroll;height:200px;"><code>
+#define SECRET_SSID "SSID_name" //access point ssid name
+#define SECRET_PASS "yourPassword" //password
+
+#include 
+#include 
+char ssid[] = SECRET_SSID;
+char pass[] = SECRET_PASS;
+int status = WL_IDLE_STATUS;
+
+#include <time> 
+#include  
+
+#include 
+
+SoftwareSerial HC12(10, 11); // HC-12 TX Pin, HC-12 RX Pin
+
+unsigned long initTime;
+unsigned long endTime;
+unsigned long raceTime = 0;
+int nOfMeasurements = 0;
+const int buzzer = 6; //buzzer to arduino pin 6
+const int IReceiver = 9;
+
+double times[100];
+
+WiFiServer server(80);
+
+void setup() {
+  Serial.begin(1200);
+
+  for (int i = 0; i &lt; 100; i++)
+    times[i] = 0.0;
+  
+  while ( status != WL_CONNECTED) {
+    status = WiFi.begin(ssid, pass);
+    delay(5000);
+  }
+  server.begin();
+  printWiFiData();
+  
+  HC12.begin(1200);   
+  // wait until serial port opens for native USB devices
+  while (! Serial) {
+    delay(1);
+  }
+
+  pinMode(IReceiver, INPUT);
+
+}
+
+
+void loop() {
+
+  while (HC12.available()) {  // If HC-12 has data - starting chrono
+    //start time
+    Serial.write(HC12.read());      // Send the data to Serial monitor and clear radio data
+    initTime = millis();
+    Serial.print("Init time "); Serial.println(initTime);
+    nOfMeasurements = 0;
+    tone(buzzer,196);
+    delay(50);
+    noTone(buzzer);
+    delay(50);
+    tone(buzzer,196);
+    delay(50);
+    noTone(buzzer);
+    HC12.write("e"); //ping back for debug
+  }
+   
+  int IRstate = digitalRead(IReceiver);
+  if (IRstate == LOW)
+  {
+    Serial.println("low");
+    endTime = millis();
+    raceTime = endTime - initTime;
+    double raceTimeSec = raceTime;
+    raceTimeSec = raceTimeSec/1000;
+    times[nOfMeasurements] = raceTimeSec;
+    nOfMeasurements++;
+    tone(buzzer,100);
+  }
+  delay(10);
+  noTone(buzzer);
+
+  listeningClientsHTML(raceTime);
+}
+
+void listeningClientsHTML(unsigned long raceTime)
+{
+    // listen for incoming clients
+  WiFiClient client = server.available();
+  if (client) {
+    Serial.println("new client");
+    // an http request ends with a blank line
+    bool currentLineIsBlank = true;
+    while (client.connected()) {
+      if (client.available()) {
+        char c = client.read();
+        Serial.write(c);
+        // if you've gotten to the end of the line (received a newline
+        // character) and the line is blank, the http request has ended,
+        // so you can send a reply
+        if (c == '\n' &amp;&amp; currentLineIsBlank) {
+          // send a standard http response header
+          client.println("HTTP/1.1 200 OK");
+          client.println("Content-Type: text/html");
+          client.println("Connection: close");  // the connection will be closed after completion of the response
+          client.println("Refresh: 5");  // refresh the page automatically every 5 sec
+          client.println();
+          client.println("");
+          client.println("");
+          // output the value of each analog input pin
+          client.println("Results: ");
+          client.println("<br>");
+
+          for (int i = 0; i &lt; nOfMeasurements; i++)
+          {
+            client.println(times[i]);
+            client.println("<br>");
+          }
+          client.println("<br>");
+          client.println("number of detections: ");
+          client.println(nOfMeasurements);
+          client.println("<br>");
+          client.println("");
+
+        }
+        if (c == '\n') {
+          // you're starting a new line
+          currentLineIsBlank = true;
+        } else if (c != '\r') {
+          // you've gotten a character on the current line
+          currentLineIsBlank = false;
+        }
+      }
+    }
+
+    // give the web browser time to receive the data
+    delay(1);
+    // close the connection:
+    client.stop();
+    Serial.println("client disconnected");
+  }
+}
+
+
+void printWiFiData() {
+  // print your board's IP address:
+  IPAddress ip = WiFi.localIP();
+  Serial.print("IP address : ");
+  Serial.println(ip);
+  Serial.print("Subnet mask: ");
+  Serial.println((IPAddress)WiFi.subnetMask());
+  Serial.print("Gateway IP : ");
+  Serial.println((IPAddress)WiFi.gatewayIP());
+
+  // print your MAC address:
+  byte mac[6];
+  WiFi.macAddress(mac);
+}
+</time></code></div></pre>
+
+                            <h4 class="wp-block-heading" id="note">Note</h4>
+                            <ul>
+                                <li>Attualmente quando avviene lo "sparo", anche il modulo arrivo emette un bip. Inoltre, un impulso viene mandato indietro e il modulo partenza riemette un altro bip dopo 2 secondi. Questa funzione è stata implementata per testare la distanza massima tra i due moduli. Potete cambiare il codice come meglio credete. Se avete bisogno di chiarimenti o consigli su eventuali modifiche, contattatemi.</li>
+                                <li>Nella versione corrente, quando almeno un client è connesso al sito web, il cronometro è temporaneamente sospeso. Dovete chiudere il browser prima di poter registrare altri tempi.</li>
+                                <li>Ho testato anche il sensore di distanza <a href="https://www.adafruit.com/product/3317">Adafruit VL53L0X</a>. Nonostante abbia una portata anche superiore a quello inserito in questa guida, viene venduto senza protezione/cover. Risultato è che all'esterno è inutilizzabile poichè la luce solare funge da rumore, producendo false rilevazioni. </li>
+                                <li>È importante che le due antenne, o almeno quella ricevente situata al traguardo, siano 1) verticali; 2) più alte possibili. Secondo <a href="https://opencircuit.shop/resources/file/0f8d974f31fd813604c4d3fb0e9004ec3b483706466/HC-12-Datasheet.pdf">il produttore dei moduli radio HC-12</a>, la distanza di trasmissione massima raggiunge il chilometro. Però si parla di condizioni <em>ottimali</em>, un po' come quando a scuola studiavi i problemi fisici <em>nel vuoto</em>. Dunque, è bene tenere presente che vari fattori incidono sulla distanza di trasmissione, anche l'umidità dell'aria. <br>Dopo aver fatto numerose prove, son giunto ad una configurazione perfettamente funzionante anche per la massima distanza punto-punto in una pista d'atletica, cioè la diagonale che va dal traguardo alla partenza dei 200m. Nel mio caso, il modulo trasmettitore è stato poggiato a terra, mentre il modulo arrivo sta in cima al treppiede, quindi a circa 1.80m.<br>Inoltre, il <em>serial port baud rate </em>di entrambi i moduli radio è stato settato a 1200 bps. Come farlo? Basta collegare l'HC-12 con il pin 5 collegato al ground e digitare "AT+B1200" nel monitor seriale di Arduino. Tramite questa modifica, i moduli radio vengono messi in modalità <em>long range</em>. <br>Secondo il manuale, la modalità FU4 è quella che garantisce massima distanza. Ho testato anche questa, ma la frequenza di trasmissione è troppo bassa e l'impulso arriva con eccessivo ritardo per avere una misura affidabile. Ho quindi lasciato la modalità di fabbrica "FU3".</li>
+                                <li>Alcuni power bank si spengono automaticamente dopo alcuni secondi perchè non rilevano la scheda Arduino attaccata ad essi. Il Fresh'N Rebel mi dà questo problema, lo uso quindi per la partenza. Infatti, il modulo partenza deve rimanere acceso solo per mandare lo start. Se conoscete dei power banks che non danno questi problemi, ben venga.</li>
+                                <li>Perchè il sistema è preciso? Perchè la comunicazione tra i due moduli si basa su onde radio, che si trasmettono alla velocità della luce.</li>
+                            </ul>
+
+                            <figure class="wp-block-image size-large"><img src="images/infrared.jpg" width="225" alt="" class="wp-image-685" /><figcaption class="wp-element-caption">L'Adafruit in azione. È possibile intravedere i raggi infrarossi attraverso la fotocamera del telefono, e ovviamente non ad occhio nudo.</figcaption></figure>
+                            <figure class="wp-block-image size-large"><img src="images/pringles.jpg" width="169" alt="" class="wp-image-686" /><figcaption class="wp-element-caption">Il tentativo di isolamento del sensore Adafruit utilizzando il tubetto Pringles.</figcaption></figure>
+
+                            <h4 class="wp-block-heading" id="limitazioni-e-possibili-estensioni">Limitazioni e possibili estensioni</h4>
+                            <ul>
+                                <li>La prima estensione che viene in mente è sicuramente una funzionalità di intertempo. Per rilevare i passaggi dell'atleta ogni x metri, dobbiamo sicuramente piazzare delle nuove fotocellule. Qui si aprono due possibilità: a) ogni nuova barriera è costituita da un Arduino + radio HC-12 + sensore fotoelettrico; b) ogni nuova barriera è costituita dal solo sensore fotoelettrico, collegato al modulo arrivo tramite un cavo. Nel primo caso, la barriera comunicherebbe il tempo parziale al modulo arrivo via radio: una soluzione senza fili ma molto più costosa. Sarebbe un po' uno spreco usare una nuova scheda. Il secondo caso risulta invece molto più economico, nonostante la necessità di portarsi dietro il cavo. Io opterei per la seconda.</li>
+                                <li>Il sistema proposto è in grado di rilevare i tempi di una sola corsia. Questo avviene a causa della scarsa portata della fotocellula, la quale viene venduta con una specifica di 80cm. I miei test arrivano a circa 60cm. Per migliorare, si potrebbero utilizzare <a href="https://www.amazon.it/gp/product/B00EFOTJZE/ref=ppx_yo_dt_b_asin_title_o03_s01?ie=UTF8&amp;psc=1">fotodiodi infrarossi</a> (come quelli dei telecomandi delle TV) che hanno una portata superiore. In tal modo, potrebbe essere possibile rilevare due o più corsie.</li>
+                                <li>Una <a href="https://www.amazon.it/MODULO-CAMERA-VIDEOCAMERA-ARDUINO-COMPATIBILE/dp/B072N3NYW7">fotocamera per Arduino</a>, da azionare al momento del passaggio di ciascun atleta, aggiungerebbe la funzione "fotofinish".</li>
+                                <li>Un <a href="https://www.amazon.it/gp/product/B07PGZ9B51">display LCD</a> potrebbe essere aggiunto al modulo traguardo per evitare di maneggiare il telefono durante l'allenamento.</li>
+                                <li>Potrebbe essere sviluppata un'app o un sito web più avanzato che, oltre a visualizzare i tempi, aiuterebbe nella gestione dell'allenamento. Qui il limite è solo la fantasia: memorizzazione dei risultati, PB, periodizzazione dell'anno, ecc. ecc. </li>
+                                <li>Invece delle cassette di derivazione, abbastanza rudi, si potrebbero usare dei contenitori più <em>cool </em>o <em>trash</em>. Per esempio, qualora aveste una stampante 3D a disposizione, potreste stampare una geometria che si adatta perfettamente ai componenti. Un contenitore a forma di pista di atletica sarebbe fenomenale.</li>
+                                <li>Si potrebbe studiare un modo di collegare un sensore di forza ai blocchi di partenza e al sistema. Personalmente ho trovato dei sensori troppo deboli, nell'ordine di pochi newton, e quindi non adatti alla potenza esercitata da un velocista. Accetto volentieri eventuali suggerimenti.</li>
+                            </ul>
+
+                            <p>Una volta collegato, implementato e montato il tutto, possiamo mettere all'opera il nostro cronometro elettrico fatto in casa. Accendiamo la funzione router wifi ed entrambi gli Arduino. Siamo pronti a correre!</p>
+                            <p>Lo scopo di quest'articolo è fornire una guida per qualsiasi atleta o allenatore che avesse bisogno di un sistema di cronometraggio preciso. Non servono particolari conoscenze, ma solo un po' di tempo, voglia e <em>qualche soldo.</em> Quest'articolo è open source. Chiunque può copiare e modificare i codici sorgenti e i circuiti Arduino a proprio piacimento. Mi farebbe piacere vedere delle estensioni di questa versione di base. Qualora prendeste spunto da questa guida, un riferimento a questo blog sarebbe molto gradito.</p>
+                            <p>Saluti velocissimi a tutti</p>
+                            <h4 class="wp-block-heading" id="riferimenti">Riferimenti</h4>
+                            <p><a href="https://www.arduino.cc/en/Tutorial/LibraryExamples/SimpleWebServerWiFi">Simple Web Server WiFi</a><br><a href="https://create.arduino.cc/projecthub/SURYATEJA/use-a-buzzer-module-piezo-speaker-using-arduino-uno-89df45">Use a buzzer module with Arduino Uno</a><br><a href="https://www.arduinofacile.it/2019/03/26/led-e-pulsante/">Pulsante come interruttore<br></a><a href="https://howtomechatronics.com/tutorials/arduino/arduino-and-hc-12-long-range-wireless-communication-module/">Arduino and HC-12 Long Range Wireless Communication Module<br></a></p>
+
+
+
+														<!-- Slideshow container -->
+							<div class="slideshow-container">
+
+							  <!-- Full-width images with number and caption text -->
+							  <div class="mySlides fade">
+								<div class="numbertext">1 / 7</div>
+								<img src="images/cronometro/1.jpg" style="width:100%">
+							  </div>
+
+							  <div class="mySlides fade">
+								<div class="numbertext">2 / 7</div>
+								<img src="images/cronometro/2.jpg" style="width:100%">
+							  </div>
+
+							  <div class="mySlides fade">
+								<div class="numbertext">3 / 7</div>
+								<img src="images/cronometro/3.jpg" style="width:100%">
+							  </div>
+
+							  <div class="mySlides fade">
+								<div class="numbertext">4 / 7</div>
+								<img src="images/cronometro/4.jpg" style="width:100%">
+							  </div>
+
+							  <div class="mySlides fade">
+								<div class="numbertext">5 / 7</div>
+								<img src="images/cronometro/5.jpg" style="width:100%">
+							  </div>
+
+							  <div class="mySlides fade">
+								<div class="numbertext">5 / 7</div>
+								<img src="images/cronometro/6.jpg" style="width:100%">
+							  </div>
+
+							  <div class="mySlides fade">
+								<div class="numbertext">5 / 7</div>
+								<img src="images/cronometro/7.jpg" style="width:100%">
+							  </div>
+
+							  <!-- Next and previous buttons -->
+							  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+							  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+							</div>
+							<br>
+
+							<!-- The dots/circles -->
+							<div style="text-align:center">
+							  <span class="dot" onclick="currentSlide(1)"></span>
+							  <span class="dot" onclick="currentSlide(2)"></span>
+							  <span class="dot" onclick="currentSlide(3)"></span>
+							  <span class="dot" onclick="currentSlide(4)"></span>
+							  <span class="dot" onclick="currentSlide(5)"></span>
+							  <span class="dot" onclick="currentSlide(6)"></span>
+							  <span class="dot" onclick="currentSlide(7)"></span>
+							</div>
+
+
+                        </details>
+                        </div>
+                    </section>
+
+
+                    <!-- --------------------------------------------------------------- -->
+
+
+
+                    <section id="stopwatch2.0">
+                        <div class="container">
+                        <details>
+                        <summary>
+                        <h3>Athletics timing system (v2.0)</h3>
+                        <h4>A semi-professional custom stopwatch for individual or team sprint sessions</h4>
+                        <h5>23 March 2026</h5>
+                        </summary>
+                        <p>
+                            Here we are. After long time, I decided to resume the project of the electronic stopwatch, and to make it better.
+                            Better means essentially more user-friendly and more sophisticated.
+                            The main improvement regarding the start module is a more powerful buzzer, capable to emit ~100 decibels.
+                            This is quite fundamental as the starting sound should be clearly audible, particularly during crowded trainings.
+                            On the finish module, the main improvement has been using another photoelectric sensor, which has a significantly bigger range.
+                            This allows to measure times of all the eight lanes of a track.
+                            Overall, the system works as follows: the start module sends the starting signal to the finish module, which starts the timer.
+                            When the athlete triggers the photoelectric sensor, placed at the finish line, the timer stops.
+                            Let's dig into the technical details.
+
+                            <h4>Start module</h4>
+                            I built the module to be placed close to the starting line with the following material:
+                            <ul>
+                                <li>an <a href="https://docs.arduino.cc/hardware/mkr-wan-1310/">Arduino MKR WAN 1310</a> with <a href="https://www.conrad.ch/fr/p/arduino-x000016-kit-x000016-antenna-for-mkr-wan-1300-mkr-2338897.html">antenna</a>;</li>
+                                <li>a breadboard;</li>
+                                <li>two buttons, I opted for <a href="https://joy-it.net/en/products/Button-XXX">one arcade button</a> to have a retro style, and one <a href="https://sensorkit.joy-it.net/en/sensors/ky-004">little push button</a>;</li>
+                                <li>a powerful <a href="https://www.distrelec.ch/en/piezo-buzzer-continuous-102db-3khz-16vdc-30-85-rs-pro-7542015/p/30403473">buzzer</a>, still working at 5V but capable to emit more than 100 dB.</li>
+                                <li>a power bank to power the Arduino. Most power banks automatically turn off after a few seconds or minutes when the electrical load is very low,
+                                like in our case. So, after I careful research, I tested the <a href="https://www.anker.com/eu-en/products/a1688">Anker Zolo A1688</a>,
+                                which has <a href="https://service.anker.com/article-description/What-is-Trickle-Charging-Mode">a mode designed to charge low-power consumption devices</a>.
+                                It is sufficient to press twice the power button to enable it, and the power bank will stay on for two hours;</a>
+                                </li>
+                                
+                            </ul>
+
+                            Code: <br>
+                            <pre><div id="startCode" style="overflow-y:scroll;height:400px;"><code>
+#include &lt;SPI.h&gt;
+#include &lt;LoRa.h&gt;
+
+int inPin = A6;
+int aiVostriPostiPin = A2;
+int buzzerPin = A4;
+int partenzaDiretta = 0;
+int aiVostriPosti = 0;
+
+void setup() {
+  Serial.begin(9600);
+  randomSeed(analogRead(0));
+
+  if(Serial)
+    Serial.println("LoRa Sender - modulo partenza");
+
+  if (!LoRa.begin(868E6)) {
+    Serial.println("Starting LoRa failed!");
+    while (1);
+  }
+
+  pinMode(inPin, INPUT);
+  pinMode(aiVostriPostiPin, INPUT);
+  pinMode(buzzerPin, OUTPUT);
+
+  delay(1000);
+
+
+}
+
+void loop() {
+
+  partenzaDiretta = digitalRead(inPin);
+  aiVostriPosti = digitalRead(aiVostriPostiPin);
+
+  if (partenzaDiretta == HIGH)
+  {
+    Serial.println("Partiti!");
+    LoRa.beginPacket();
+    LoRa.print("s");
+    LoRa.endPacket();
+
+    
+    digitalWrite(buzzerPin, HIGH);
+    delay(1000); //suona per 1 s
+    digitalWrite(buzzerPin, LOW);
+    delay(1000); //evita un'altra partenza
+
+  }
+
+  if (aiVostriPosti == LOW)
+  {
+    Serial.println("Ai vostri posti");
+    tone(buzzerPin, 800);
+    delay(500); //suona per 0.5 s
+    noTone(buzzerPin);
+    delay(10000); //10 s per posizionarsi
+
+
+    int prontiRit = random(2500,4000);
+    Serial.print("Pronti");Serial.println(prontiRit);
+    tone(buzzerPin, 1000);
+    delay(500); //PRONTI - suona per 0.5 s
+    noTone(buzzerPin);
+    delay(prontiRit);
+
+
+    Serial.println("Partiti!");
+    LoRa.beginPacket();
+    LoRa.print("s");
+    LoRa.endPacket();
+    digitalWrite(buzzerPin, HIGH);
+    delay(1000); //suona per 1 s
+    digitalWrite(buzzerPin, LOW);
+    
+    delay(1000); //evita un altro comando subito
+
+  }
+
+
+}
+
+
+                            </code></div></pre>
+
+                            Picture: coming soon <br>
+                            Fritzing: coming soon <br>
+
+                            The yellow button gives the start directly, in the case there is another person around. 
+                            The little button gives the "on your marks" command. After 10 seconds, another beep gives the "set", and after a random interval of 2.5 s - 4 s, the final "beep"
+                            is the actual start! Of course the duration of the intervals can be changed from the code.
+
+
+                            <br><br>
+
+                            <h4>Finish module</h4>
+                            This module will be placed at the finish line, with two photocells exactly aligned between each other to create a gate that athletes have to pass.
+                            One photocell is emitter and the other one, connected to the Arduino, is the receiver. When the athlete passes in between them, the signal is interrupted and the clock stops.
+                            This module is equipped with a little LCD display to show the times. The necessary material is:
+
+                            <ul>
+                                <li>Arduino MKR WAN 1310 with antenna;</li>
+                                <li>breadboard;</li>
+                                <li><a href="https://projecthub.arduino.cc/arduino_uno_guy/i2c-liquid-crystal-displays-5eb615">display with I2C interface</a></li>
+                                <li>two 12V A23 alkaline batteries with two respective <a href="images/porta-batteria.jpg">battery holders</a>;</li>
+                            </ul>
+
+                            Code: <br>
+                            <pre><div id="startCode" style="overflow-y:scroll;height:400px;"><code>
+#include &lt;SPI.h&gt;
+#include &lt;LoRa.h&gt;
+
+#include &lt;LCD-I2C.h&gt;
+#include &lt;Wire.h&gt;
+
+int inPin = A1;    // pushbutton connected to digital pin 7
+int fotocellula = 0; 
+LCD_I2C lcd(0x27, 16, 2); // Default address of most PCF8574 modules, change according
+
+unsigned long initTime;
+unsigned long endTime;
+unsigned long raceTime;
+bool partiti = false;
+int atleti = 0;
+int riga = 0;
+int col = 0;
+unsigned long oraTuttiArrivati;
+double tempoDisplay = 10.0;
+
+void setup() {
+  Serial.begin(9600);
+
+  Wire.begin();
+  lcd.begin(&Wire);
+  lcd.display();
+  lcd.backlight();
+  lcd.clear();
+  lcd.print("Atletica Barbas");
+
+  if(Serial)
+    Serial.println("LoRa Receiver - modulo arrivo");
+
+  if (!LoRa.begin(868E6)) {
+    Serial.println("Starting LoRa failed!");
+    while (1);
+  }
+
+  pinMode(inPin, INPUT);    // sets the digital pin 7 as input
+
+}
+
+void loop() {
+
+  int packetSize = LoRa.parsePacket();
+  if (packetSize) 
+  {
+    while (LoRa.available()) 
+    {
+      Serial.print((char)LoRa.read());
+    }
+
+    //qui parte il tempo perché la partenza è arrivata via radio
+    initTime = millis();
+    partiti = true;
+    Serial.print("Init time "); Serial.println(initTime);
+    lcd.clear();
+    lcd.print("Partiti!");
+    riga = col = atleti = 0;
+  }
+
+  fotocellula = analogRead(inPin);
+  if (fotocellula > 128 && partiti && atleti < 6)
+  {
+    endTime = millis();
+    raceTime = endTime - initTime;
+    double raceTimeSec = raceTime;
+    raceTimeSec = raceTimeSec/1000;
+
+
+    if (atleti == 0)
+      lcd.clear();
+
+    if (atleti == 3)
+    {
+      col = 0;
+      riga++;
+    }
+    lcd.setCursor(col, riga);
+    lcd.print(raceTimeSec);
+
+    atleti++;
+    col += 6;
+
+    if (atleti == 6)
+      oraTuttiArrivati = millis();
+
+    delay(100); //tempo morto della fotocellula per evitare falsi positivi: 0.1 s
+
+  }
+  
+  if (atleti >= 6 && (millis() - oraTuttiArrivati)/1000 < tempoDisplay)
+  {
+    for (int i = 0; i < 1; i++) {
+      lcd.scrollDisplayLeft();
+      delay(1000); //velocità scorrimento
+    }
+
+    for (int i = 0; i < 1; i++) {
+      lcd.scrollDisplayRight();
+      delay(1000);
+    }
+  }
+
+}
+
+                            </code></div></pre>
+
+                            Picture: coming soon<br>
+                            Fritzing: coming soon<br>
+
+                            <br><br>
+
+                            <h4>Misc, box and support</h4>
+
+                            In addition, for making the system, you should have the following items. Items in green are facultative:
+                            <ul>
+                                <li><a href="https://www.exploringarduino.com/parts/jumper-wires/">jumper wires</a>;</li>
+                                <li>two micro USB-B cable to connect the Arduino to the power bank;</li>
+                                <li>resistors;</li>
+                                <li>a welder;</li>
+                                <li>terminal blocks;</li>
+                                <li>two switch buttons;</li>
+                                <li>two tripods;</li>
+                                <li>one or two small tripods.</li>
+                            </ul>
+
+                            You can use anything as a container for the modules. I decided to use storage boxes, and
+                            two standard tripods to support the photocells and two small ones to support the boxes.
+                            You can also use fixing brackets to use a single tripod to support the box and the receiving photocell.
+       
+                            
+
+
+                            <br><br>
+
+                            <h4>Notes</h4>
+                            <ul>
+                                <li>The Arduino pins work at 3.3V as input and output voltage. However, the power bank with micro USB-B
+                                powers it with 5V. The Arduino can also output 5V from one of the pins, which I used to power the buzzer in the start module,
+                                and the display in the finish module.
+                                </li>
+                                <li>I implemented a 0.1 s interval dead time for the photocell to avoid false positives caused by multiple triggers
+                                from a single athlete. This means that after an initial detection, the photocell remains inactive for 0.1 seconds. 
+                                This interval is reasonable for mid-level sprinters, as it corresponds to a distance of ~1 meter.
+                                However, it can be easily adjusted in the finish module code.
+                                As it is, if two athletes cross the finish line with a separation of less than 0.1 s, the second one will not be detected.
+                                Conversely, disabling this feature would cause the system to report multiple times for the same person,
+                                making it difficult to distinguish which ones belong to the first athlete and which ones beloing to the second athlete.
+                                Therefore, I decided to include the dead time. Professional timing systems typically solve this by combining
+                                photoelectric sensor data with the photo finish camera data, being able to accurately discriminate between close arrivals. 
+                                </li>
+                            </ul>
+
+
+                            <br><br>
+
+                            <h4>Acknowledgements</h4>
+                            I thank <a href="https://arcanous98.github.io/">Jorge Condor</a> for his suggestions on the design of the finish module circuit.
+
+                        
+                        
+                        </p>
+                        </details>
+                        </div>
+                    </section>
+
+
+                    <section id="#power">
+                        <div class="container">
+                        <details>
+                        <summary>
+                        <h3>Display power consumption system</h3>
+                        <h4>A custom hardware based on Arduino and Raspberry Pi for benchmarking LCD energy consumption</h4>
+                        <h5>Coming soon</h5>
+                        </summary>
+
+
+                </div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="container">
+							<ul class="copyright">
+								<li>&copy; Luca Surace. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+            <script src="assets/js/slideshow.js"></script>
+
+	</body>
+</html>
