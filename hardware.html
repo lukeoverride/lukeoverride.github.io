@@ -476,15 +476,14 @@ void printWiFiData() {
                             I built the module to be placed close to the starting line with the following material:
                             <ul>
                                 <li>an <a href="https://docs.arduino.cc/hardware/mkr-wan-1310/">Arduino MKR WAN 1310</a> with <a href="https://www.conrad.ch/fr/p/arduino-x000016-kit-x000016-antenna-for-mkr-wan-1300-mkr-2338897.html">antenna</a>;</li>
-                                <li>a breadboard;</li>
-                                <li>two buttons, I opted for <a href="https://joy-it.net/en/products/Button-XXX">one arcade button</a> to have a retro style, and one <a href="https://sensorkit.joy-it.net/en/sensors/ky-004">little push button</a>;</li>
-                                <li>a powerful <a href="https://www.distrelec.ch/en/piezo-buzzer-continuous-102db-3khz-16vdc-30-85-rs-pro-7542015/p/30403473">buzzer</a>, still working at 5V but capable to emit more than 100 dB.</li>
                                 <li>a power bank to power the Arduino. Most power banks automatically turn off after a few seconds or minutes when the electrical load is very low,
                                 like in our case. So, after I careful research, I tested the <a href="https://www.anker.com/eu-en/products/a1688">Anker Zolo A1688</a>,
                                 which has <a href="https://service.anker.com/article-description/What-is-Trickle-Charging-Mode">a mode designed to charge low-power consumption devices</a>.
                                 It is sufficient to press twice the power button to enable it, and the power bank will stay on for two hours;</a>
-                                </li>
-                                
+                                </li>                      
+                                <li>a breadboard;</li>
+                                <li>two buttons, I opted for <a href="https://joy-it.net/en/products/Button-XXX">one arcade button</a> to have a retro style, and one <a href="https://sensorkit.joy-it.net/en/sensors/ky-004">little push button</a>;</li>
+                                <li>a powerful <a href="https://www.distrelec.ch/en/piezo-buzzer-continuous-102db-3khz-16vdc-30-85-rs-pro-7542015/p/30403473">buzzer</a>, still working at 5V but capable to emit more than 100 dB.</li>
                             </ul>
 
                             Code: <br>
@@ -591,9 +590,13 @@ void loop() {
 
                             <ul>
                                 <li>Arduino MKR WAN 1310 with antenna;</li>
+                                <li>a power bank to power the Arduino. This module has a slightly bigger power consumption, so most of power banks
+                                should be ok, but if have to buy it, choose the Zolo as in the start module.</li>
                                 <li>breadboard;</li>
                                 <li><a href="https://projecthub.arduino.cc/arduino_uno_guy/i2c-liquid-crystal-displays-5eb615">display with I2C interface</a></li>
                                 <li>two 12V A23 alkaline batteries with two respective <a href="images/porta-batteria.jpg">battery holders</a>;</li>
+                                <li>a <a href="https://www.amazon.it/Fotocellula-monouso-12-24-fino-metri/dp/B0922KMVX5">pair of photocells (transmitter and receiver)</a>. After a careful research,
+                                I selected this type because they have a great range, work at 12V, and they are not expensive. </li>
                             </ul>
 
                             Code: <br>
@@ -713,21 +716,23 @@ void loop() {
 
                             <h4>Misc, box and support</h4>
 
-                            In addition, for making the system, you should have the following items. Items in green are facultative:
+                            In addition, for making the system, you should have the following items. Items in <span style="color: #00d1b2;">green</span> are facultative:
                             <ul>
                                 <li><a href="https://www.exploringarduino.com/parts/jumper-wires/">jumper wires</a>;</li>
                                 <li>two micro USB-B cable to connect the Arduino to the power bank;</li>
                                 <li>resistors;</li>
+                                <span style="color: #00d1b2;">
                                 <li>a welder;</li>
                                 <li>terminal blocks;</li>
                                 <li>two switch buttons;</li>
-                                <li>two tripods;</li>
                                 <li>one or two small tripods.</li>
+                                </span>
+                                <li>two tripods;</li>
                             </ul>
 
-                            You can use anything as a container for the modules. I decided to use storage boxes, and
-                            two standard tripods to support the photocells and two small ones to support the boxes.
-                            You can also use fixing brackets to use a single tripod to support the box and the receiving photocell.
+                            You can use anything as a container for the modules. I used storage boxes, and two small tripods to support the boxes. 
+                            Two standard full-size tripods are likely necessary to support the photocells and ensure they are aligned at the same height.
+                            You can also use fixing brackets to use a single tripod to support both the box containing the finish module and the receiving photocell.
        
                             
 
@@ -740,7 +745,7 @@ void loop() {
                                 powers it with 5V. The Arduino can also output 5V from one of the pins, which I used to power the buzzer in the start module,
                                 and the display in the finish module.
                                 </li>
-                                <li>I implemented a 0.1 s interval dead time for the photocell to avoid false positives caused by multiple triggers
+                                <li>I implemented a 0.1 s interval as dead time for the photocell to avoid false positives caused by multiple triggers
                                 from a single athlete. This means that after an initial detection, the photocell remains inactive for 0.1 seconds. 
                                 This interval is reasonable for mid-level sprinters, as it corresponds to a distance of ~1 meter.
                                 However, it can be easily adjusted in the finish module code.
@@ -750,6 +755,9 @@ void loop() {
                                 Therefore, I decided to include the dead time. Professional timing systems typically solve this by combining
                                 photoelectric sensor data with the photo finish camera data, being able to accurately discriminate between close arrivals. 
                                 </li>
+                                <li>You need two Arduino for this project. The MKR WAN 1310 uses a <a href="https://en.wikipedia.org/wiki/LoRa">LoRa</a> technology.
+                                You can also use other development boards able to communicate between each other.
+                                
                             </ul>
 
 
