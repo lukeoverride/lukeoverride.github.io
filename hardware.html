@@ -783,8 +783,44 @@ void loop() {
                         <summary>
                         <h3>Display power consumption system</h3>
                         <h4>A custom hardware based on Arduino and Raspberry Pi for benchmarking LCD energy consumption</h4>
-                        <h5>Coming soon</h5>
-                        </summary>
+                        <h5>16th April 2026</h5></summary>
+                        <p>
+                        <a href="https://www.pdf.inf.usi.ch/projects/BrightnessManagement/index.html">One of my research project</a> focused on designing and implementing a novel technique to optimize
+                        the tradeoff between image quality and power consumption in VR headsets.
+                        The objective was to achieve higher image quality while consuming the same amount of power; or to maintain the same image quality, while reducing overall power consumption.
+                        In architectures based on LCD, the backlight is the main source of power consumption. Therefore, lowering its brightness through dimming techniques is the main method for
+                        reducing energy usage.
+                        In this project, we designed a content-dependent algorithm that analyzes each frame in real time (up to ~40 FPS) and determines the optimal brightness of the display.
+                        The per-frame brightness value is enough to preserve contrast and visual details while being significantly lower than the full brightness.
+                        This temporal modulation of the backlight results in overall power savings. Further details on the technique are provided in the 
+                        <a href="https://www.pdf.inf.usi.ch/projects/BrightnessManagement/index.html">project page</a>.
+
+                        <h4>Components</h4>
+                        <ul>
+                            <li>Basetech BT-155 power supply;</li>
+                            <li>Arduino Uno;</li>
+                            <li>Raspberry Pi 3;</li>
+                            <li>Raspberry Pi 7" LCD panel. It is a RGB display with a native resolution of 800x480 and a peak luminance L<sub>max</sub> = 750 cd/m<sup>2</sup>.
+                            The backlight is LED and controllable via software through the Raspberry Pi;</li>
+                            <li>INA219 current sensor</li>
+                        </ul>
+
+
+                        <h4>Schematic</h4>
+                        <center><img src="images/schematic.svg" width=100%></center>
+                        We use an adjustable voltage power supply (Basetech BT-155), which externally powers a Raspberry Pi LCD display. The external Arduino is used to continually measure
+                        the power consumption of the LCD monitor throughout the video playback, using the current sensor.
+
+                        <br><br>
+
+                        <h4>Picture</h4>
+                        <center><img src="images/circuit.jpg" width=100%></center>
+                        On the left, the red and black cables supply power to the circuit with the desired voltage and current, adjustable via the Basetech.
+                        On the right is the 7" LCD panel, displaying a frame from the <span style="font-variant: small-caps;">living room</span> sequence. The Raspberry Pi is connected to the panel
+                        and positioned behind it, making it not visible. The sensor on the breadboard measures the intensity of current, which is recorded by the Arduino, located in the top left of the picture.
+
+                        </p>
+
 
 
                 </div>
